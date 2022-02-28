@@ -1,5 +1,3 @@
-import Person from "./Person";
-
 export default class Team{
     constructor(arr){
         this.team = arr
@@ -27,4 +25,45 @@ export default class Team{
             }
         }
     }
+
+    *[Symbol.iterator](){
+        for (let person of this.team){
+            yield person
+        }
+    }
 }
+
+const heroes = [
+    {
+    name: 'Лучник',
+    type: 'Bowman',
+    health: 50,
+    level: 1,
+    attack: 40,
+    defence: 10
+  },
+  {
+    name: 'Лучник',
+    type: 'Bowman',
+    health: 50,
+    level: 2,
+    attack: 40,
+    defence: 10
+  },
+  {
+    name: 'Лучник',
+    type: 'Bowman',
+    health: 50,
+    level: 3,
+    attack: 40,
+    defence: 10
+  },
+  {
+    name: 'Лучник',
+    type: 'Bowman',
+    health: 50,
+    level: 4,
+    attack: 40,
+    defence: 10
+  }
+];
